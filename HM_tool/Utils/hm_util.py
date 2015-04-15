@@ -14,7 +14,7 @@ class utils(object):
 
 
     def auth_response(self,request):
-        if request.REQUEST['username'] in hm_config.authenticated_user:
+        if 'username' in request.REQUEST and request.REQUEST['username'] in hm_config.authenticated_user:
             username = request.REQUEST['username']
             if request.REQUEST['password'] in hm_config.authenticated_user[username]:
                 return True

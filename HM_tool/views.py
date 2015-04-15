@@ -43,6 +43,7 @@ class Controller(utils, exception):
     def authentication(self,request):
 
        try:
+           import pdb;pdb.set_trace()
            valid = self.auth_response(request)
            if valid:
                request.session['authenticated'] = True
