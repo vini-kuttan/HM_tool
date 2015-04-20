@@ -27,5 +27,6 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^login/$', controller.login_form),
     url(r'^authentication/$',controller.authentication),
-    url(r'^record_inquiry/$', patient_views.record_inquiry), 
+    url(r'^record_inquiry/$', patient_views.record_inquiry),
+    url(r'^authentication/login_form.html/$',controller.login_form), 
 )
