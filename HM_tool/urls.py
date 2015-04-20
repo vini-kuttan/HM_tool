@@ -1,6 +1,12 @@
 from django.conf.urls import patterns, include, url
 
+import sys
 import views
+
+sys.path.append('/home/vineesh/Product/HM_tool')
+
+import patient_records
+from patient_records import views as patient_views
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -21,4 +27,5 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^login/$', controller.login_form),
     url(r'^authentication/$',controller.authentication),
+    url(r'^record_inquiry/$', patient_views.record_inquiry), 
 )
