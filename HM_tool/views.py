@@ -40,6 +40,11 @@ class Controller(utils, exception):
        c = Context({})
        return HttpResponse(t.render(c))
 
+    def search_criteria(self,request):
+       t = loader.get_template(template_path+'/search_index.html')
+       c = Context({})
+       return HttpResponse(t.render(c))
+
     def authentication(self,request):
 
        try:

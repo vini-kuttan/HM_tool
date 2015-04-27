@@ -20,6 +20,9 @@ class Patient_inquiry(models.Model):
     room_no = models.CharField(max_length=30)
     room_type = models.CharField(max_length=30)
     Insurance = models.CharField(max_length=30)
+  
+    def __unicode__(self):
+       return self.firstname
 
 
 

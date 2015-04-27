@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+        {% load staticfiles %}
+        <link href="{% static "css/default.css" %}" rel='stylesheet' type='text/css' />
+</head>
+<body>
+        <div class="register">
+          <h1>Try Easy search</h1>
+          <form action="/search_data/" method="get" id="reg-form">
+            <div>
+              <label for="name">FirstName   </label>
+              <input type="text" id="name" name="search_fname">
+            </div>
+            <div>
+              <label for="mail">LastName   </label>
+              <input type="text" id="email" name="search_lname">
+            </div>
+            <div>
+              <label for="username">RoomType   </label>
+              <select name='search_room_type'>
+                        <option value="General wards">GW
+                        </option>
+                        <option value="ICU">ICU
+                        </option>
+              </select>
+            </div>
+            <div>
+              <label for="password">PatientType   </label>
+              <select name='search_patient_type'>
+                        <option value="In Patient">IP
+                        </option>
+                        <option value="Out Patient">OP
+                        </option>
+              </select>
+            </div>
+            <div>
+              <div><button type="submit" align= 'center' class="button">Search &raquo;</button></div>
+            </div>
+          </form>
+     </div>
+</body>
+</html>
+      

@@ -28,5 +28,6 @@ urlpatterns = patterns('',
     url(r'^login/$', controller.login_form),
     url(r'^authentication/$',controller.authentication),
     url(r'^record_inquiry/$', patient_views.record_inquiry),
-    url(r'^authentication/login_form.html/$',controller.login_form), 
+    url(r'^authentication/search_index/$',controller.search_criteria),
+    url(r'^search_data/$',patient_views.search_data) 
 )

@@ -2,10 +2,13 @@
 
 from django.http import HttpResponse
 from models import Patient_inquiry
+from django.core import serializers
+
+import json
+
 
 def record_inquiry(request):
     obj = Patient_inquiry()
-    import pdb;pdb.set_trace() 
     obj.firstname = request.REQUEST['firstname'] 
     obj.lastname = request.REQUEST['lastname']
     obj.ssn = request.REQUEST['ssn']
@@ -23,5 +26,25 @@ def record_inquiry(request):
     obj.Insurance = request.REQUEST['Insurance']
     obj.save()
     return HttpResponse("successfully loaded")
+
+def search_data(request):
+    search = Patient_inquiry()
+    import pdb;pdb.set_trace()
+    fname = request.REQUEST['search_fname']
+    lname = request.REQUEST['search_lname']
+    room_type = request.REQUEST['search_room_type']
+    patient_type = request.REQUEST['search_patient_type']
+    try:
+        data = search.objects.filter(firstname = fname, 
+                                      lastname = lname, 
+                                      room_type = room_type, 
+                                      patient_type = patient_type)
+        formated_data = serializers.serialize("json", data)
+        result  = json.loads(formated_data)
+        return result
+
+    except:
+       return HttpResponse("No data with requested details")
+     
 
   
